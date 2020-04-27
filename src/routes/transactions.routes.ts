@@ -18,6 +18,7 @@ transactionsRouter.get('/', async (request, response) => {
   const transactions = await getRepository(Transactions).find({
     relations: ['category'],
   });
+  // const transactions = await getRepository(Transactions).find();
   const getBalance = new GetBalanceService();
 
   const balance = await getBalance.execute();
